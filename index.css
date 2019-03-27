@@ -1,0 +1,63 @@
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    background-color: #000;
+}
+
+li {
+    list-style: none;
+}
+
+.nav {
+    margin: 38px 0 0;
+}
+
+.RS {
+    font-size: 30px;
+    color: #D65D63;
+}
+
+.card {
+    color: #919499;
+    font-size: 30px;
+    margin-left: 4px;
+}
+
+.navLeft {
+    float: left;
+    margin-left: 192px;
+    font-family: "Hiragino Kaku Gothic Std";
+    font-weight: bold;
+}
+
+.navRight {
+    float: right;
+}
+
+.navRight ul li {
+    float: left;
+    margin: 0 19px;
+}
+
+.navRight ul li a {
+    color: #BEC0C3;
+    border-bottom: 3px solid transparent;
+    border-top: 4px solid transparent;
+    padding: 6px 0;
+    display: block;
+    font-weight: bold;
+}
+
+.navRight ul li a:hover {
+    border-bottom: 3px solid #D65D63;
+}
