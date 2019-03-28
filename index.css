@@ -44,10 +44,6 @@ li {
     float: right;
 }
 
-.navRight ul {
-    overflow: hidden;
-}
-
 .navRight ul li {
     float: left;
     margin: 0 19px;
