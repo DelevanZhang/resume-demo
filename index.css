@@ -207,5 +207,8 @@ hr {
     fill: white;
     vertical-align: top;
 }
+.postCard .postFooter a:hover{
+    background-color: #C05459;
+}
 
 /* 图标链接结束 */
