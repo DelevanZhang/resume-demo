@@ -109,12 +109,11 @@ li {
 .postCard {
     background-color: white;
     max-width: 940px;
-    margin: 0 auto;
-    /* padding: 55px50px 0; */
+    margin: -345px auto 0px;
 }
 
 .post {
-    padding: 50px;
+    padding: 50px 50px 35px;
 }
 
 .postCard .bigHead {
@@ -184,13 +183,12 @@ hr {
 .postCard .postFooter {
     background: #E6686A;
     text-align: center;
-    
+    /* height: 85px; */
 }
 
 /* 明信片结束 */
 
 /* 图标链接开始 */
-
 
 .postFooter a {
     display: inline-block;
@@ -207,8 +205,42 @@ hr {
     fill: white;
     vertical-align: top;
 }
-.postCard .postFooter a:hover{
+
+.postCard .postFooter a:hover {
     background-color: #C05459;
 }
 
 /* 图标链接结束 */
+
+/* 下载简历开始 */
+
+.downLoadResume {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.downLoadResume a {
+    display: inline-block;
+    background-color: #EDEDED;
+    border: 1px solid #C7C9CB;
+    color: #414652;
+    padding: 23px 56px;
+    border-radius: 2px;
+    font-weight: bold;
+}
+.downLoadResume a:hover{
+    box-shadow: 0px 2px 8px 2px rgba(199,201,203,1);
+    transition: box-shadow 0.3s;
+}
+
+/* 下载简历结束 */
+/* 自我介绍开始 */
+.introduce {
+    width: 940px;
+    margin: 32px auto 0px;
+}
+.introduce > p {
+    color: #424242;
+    line-height: 30px;
+}
+/* 自我介绍结束 */
