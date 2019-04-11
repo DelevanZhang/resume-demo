@@ -314,7 +314,7 @@ hr {
 
 /* 作品集开始 */
 .Portfolio {
-    margin-bottom: 100px;
+    /* margin-bottom: 100px; */
     text-align: center;
 }
 
@@ -375,3 +375,27 @@ div.PortfolioBar>.bar-state-3 {
     margin-left: 150px;
 }
 /* 作品集结束 */
+/* 作品集图片开始 */
+div.showtime {
+    width: 940px;
+    margin: 30px auto 100px;
+    position: relative;
+    /* border: 1px solid red; */
+    height: 576px;
+}
+div.showtime>.big {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+div.showtime>.small-one {
+    position: absolute;
+    top: 0;
+    left: 645px;
+}
+div.showtime>.small-two {
+    position: absolute;
+    top: 298px;
+    left: 645px;
+}
+/* 作品集图片结束 */
