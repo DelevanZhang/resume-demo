@@ -20,7 +20,12 @@ li {
     list-style: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     list-style: none;
 }
 
@@ -33,8 +38,21 @@ ul ol {
     top: 0;
     left: 0;
     width: 100%;
+    padding: 16px 0;
+    color: #BEC0C3;
 }
 
+/* 加载动画结束 */
+/* topnavbar的状态变动开始 */
+.resumeZP>.topNavbar>.nav.sticky {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    padding: 8px 0;
+    z-index: 1;
+    color: #3d4451;
+}
+
+/* topnavbar的状态变动结束 */
 .topNavbar {
     /* position: fixed;
     top: 0;
@@ -45,8 +63,6 @@ ul ol {
 .RS {
     font-size: 30px;
     color: #D65D63;
-    /* color: red; */
-    /* border: 1px solid red; */
     float: left;
 }
 
@@ -62,31 +78,90 @@ ul ol {
     margin-left: 192px;
     font-family: "Hiragino Kaku Gothic Std";
     font-weight: bold;
-    margin-top: 38px;
 }
 
 .navRight {
     float: right;
-    margin-top: 38px;
 }
 
 .navRight ul li {
     float: left;
     margin: 0 19px;
+    position: relative;
 }
 
 .navRight ul li a {
-    color: #BEC0C3;
+    color: inherit;
     border-bottom: 3px solid transparent;
     border-top: 4px solid transparent;
     padding: 6px 0;
     display: block;
     font-weight: bold;
+    position: relative;
 }
 
-.navRight ul li a:hover {
-    border-bottom: 3px solid #D65D63;
+.navRight ul .subMenuOn.active::after,
+.navRight ul .subMenuOn.highLight::after {
+    /* border-bottom: 3px solid #D65D63; */
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #D65D63;
+    animation: menuSlid 0.3s;
 }
+
+@keyframes menuSlid {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+/* 作品栏子菜单开始 */
+.navRight .subMenu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+}
+
+/* 因为定位了过后会瘦身，所以要去除换行 */
+.subMenu>li {
+    white-space: nowrap;
+    padding: 5px;
+}
+
+.subMenuOn .subMenu {
+    display: none;
+
+}
+
+.subMenuOn.active .subMenu {
+    display: block;
+    animation: subMenuSlid 0.5s;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    color: #3d4451;
+    background-color: white;
+    cursor: pointer;
+}
+
+@keyframes subMenuSlid {
+    0% {
+        margin-right: 100%;
+    }
+
+    100% {
+        margin-right: 0;
+    }
+}
+
+/* 作品栏子菜单结束 */
 
 /* 导航栏结束 */
 
@@ -267,6 +342,11 @@ hr {
     color: #3C414E;
 }
 
+.skillWrapper {
+    width: 940px;
+    margin: 0 auto;
+}
+
 .skills {
     width: 940px;
     margin: 30px auto 0;
@@ -301,6 +381,7 @@ hr {
     margin-top: 4px;
     background-color: #F7DFE0;
     border-radius: 2px;
+    overflow: hidden;
 }
 
 .skills .progressBar .progress {
@@ -308,11 +389,21 @@ hr {
     background-color: #D65D63;
     width: 70%;
     border-radius: 2px;
+    transform: translateX(0);
+    transition: all 0.8s;
+}
+.skillWrapper.offset .progressBar .progress {
+    transform: translateX(-100%);
 }
 
 /* 技能结束 */
 
 /* 作品集开始 */
+.PortfolioWrapper {
+    width: 940px;
+    margin: 0 auto;
+}
+
 .Portfolio {
     /* margin-bottom: 100px; */
     text-align: center;
@@ -325,7 +416,7 @@ hr {
 }
 
 div.works {
-    
+
     margin-top: 40px;
     display: inline-block;
     vertical-align: top;
@@ -341,12 +432,15 @@ div.works>ul>li {
     margin-left: 50px;
     color: #000000;
 }
+
 div.works>ul>li:first-child {
     margin-left: 0;
 }
-div.works>ul>li>h4{
+
+div.works>ul>li>h4 {
     font-weight: normal;
 }
+
 div.PortfolioBar {
     /* border: 1px solid red; */
     margin-top: 16px;
@@ -354,12 +448,14 @@ div.PortfolioBar {
     background-color: white;
     border-radius: 2px;
 }
+
 div.PortfolioBar>.bar-state-1 {
     height: 100%;
     background-color: #D65D63;
     border-radius: 2px;
     width: 20%;
 }
+
 div.PortfolioBar>.bar-state-2 {
     height: 100%;
     background-color: #D65D63;
@@ -367,6 +463,7 @@ div.PortfolioBar>.bar-state-2 {
     margin-left: 64px;
     width: 30%;
 }
+
 div.PortfolioBar>.bar-state-3 {
     height: 100%;
     background-color: #D65D63;
@@ -374,6 +471,7 @@ div.PortfolioBar>.bar-state-3 {
     width: 41%;
     margin-left: 150px;
 }
+
 /* 作品集结束 */
 /* 作品集图片开始 */
 div.showtime {
@@ -383,19 +481,43 @@ div.showtime {
     /* border: 1px solid red; */
     height: 576px;
 }
+
 div.showtime>.big {
     position: absolute;
     top: 0;
     left: 0;
 }
+
 div.showtime>.small-one {
     position: absolute;
     top: 0;
     left: 645px;
 }
+
 div.showtime>.small-two {
     position: absolute;
     top: 298px;
     left: 645px;
 }
+
 /* 作品集图片结束 */
+/* 加载动画开始 */
+.loadS {
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+    position: fixed;
+    z-index: 1;
+}
+
+.loadS.loadOff {
+    display: none;
+}
+
+[data-x].offset {
+    transform: translateY(100px);
+}
+[data-x] {
+    transform: translateY(0px);
+    transition: all 0.9s;
+}

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./index.css">
-    <script src="//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js"></script>
+    <link rel="stylesheet" href="./loading.css">
+     <script src="//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js"></script>
     <title>简历</title>
     <style type="text/css">
         .icon {
@@ -18,25 +19,43 @@
         }
     </style>
 </head>
+<!-- 1.添加网速过慢的界面加载动画 -->
+<!-- 思路就是在整个盒子添加一个class，通过remove和add来控制是否显示出加载界面 -->
 
 <body>
-<div class="resumeZP">
-    <div class="topNavbar">
+<!-- 添加一个加载动画的盒子，让它显示在最上面 -->
+<div id="loadSwitch" class="loadS">
+    <div class="loading"></div>
+</div>
+<div id="resumeLoad" class="resumeZP">
+    <div id="JtopNavBar" class="topNavbar">
         <!-- 导航栏开始 -->
-        <div class="nav">
+        <div id="jNav" class="nav">
             <div class="navLeft clearfix">
                 <a href="#"><span class="RS">RS</span><span class="card">card</span></a>
 
             </div>
             <div class="navRight">
                 <ul class="clearfix">
-                    <li><a href="#">关于</a></li>
-                    <li><a href="#">技能</a></li>
-                    <li><a href="#">作品</a></li>
-                    <li><a href="#">博客</a></li>
-                    <li><a href="#">日历</a></li>
-                    <li><a href="#">联系方式</a></li>
-                    <li><a href="#">其他</a></li>
+                    <li class="subMenuOn"><a href="#aboutMe">关于</a></li>
+                    <li class="subMenuOn"><a href="#skillMe">技能</a></li>
+                    <li class="subMenuOn"><a href="#PortfolioMe">作品</a>
+                        <ul class="subMenu">
+                            <li>作品1</li>
+                            <li>作品2</li>
+                            <li>作品3</li>
+                        </ul>
+                    </li>
+                    <li class="subMenuOn"><a href="#">博客</a>
+                        <ul class="subMenu">
+                            <li>博客1</li>
+                            <li>博客2</li>
+                            <li>博客3</li>
+                        </ul>
+                    </li>
+                    <li class="subMenuOn"><a href="#">日历</a></li>
+                    <li class="subMenuOn"><a href="#">联系方式</a></li>
+                    <li class="subMenuOn"><a href="#">其他</a></li>
 
                 </ul>
 
@@ -56,7 +75,7 @@
 
     </div>
     <!-- 明信片开始 -->
-    <div class="postCard">
+    <div data-x id="aboutMe" class="postCard">
         <div class="post clearfix">
             <div class="bigHead">
                 <img src="./bigHead.jpg" width=295 height=342 alt="tupian">
@@ -92,12 +111,12 @@
         <!-- 图标链接开始 -->
         <div class="postFooter">
 
-            <!-- <li><a><svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-pololingchenshan"></use>
-                        </svg></a></li>
-                <li><a><svg class="icon" aria-hidden="true">
-                            <use xlink:href="icon-wechat"></use>
-                        </svg></a></li> -->
+<!--            <li><a><svg class="icon" aria-hidden="true">-->
+<!--                        <use xlink:href="#icon-pololingchenshan"></use>-->
+<!--                    </svg></a></li>-->
+<!--            <li><a><svg class="icon" aria-hidden="true">-->
+<!--                        <use xlink:href="icon-wechat"></use>-->
+<!--                    </svg></a></li>-->
             <a>
                 <svg class="icon" aria-hidden="true">
                     <use xlink:href="#icon-qq"></use>
@@ -131,125 +150,260 @@
     </div>
     <!-- 自我介绍结束 -->
     <!-- 技能开始 -->
-    <h2 class="skillNum">技能</h2>
-    <div class="skills">
+    <div data-x class="skillWrapper" id="skillMe">
+        <h2 class="skillNum">技能</h2>
+        <div class="skills">
 
-        <ul class="clearfix">
-            <li>
-                <h4>HTML5 & CSS3</h4>
-                <div class="progressBar">
-                    <div class="progress">
-                        <!-- 进度条 -->
+            <ul class="clearfix">
+                <li>
+                    <h4>HTML5 & CSS3</h4>
+                    <div class="progressBar">
+                        <div class="progress" style="width: 50%">
+                            <!-- 进度条 -->
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li>
-                <h4>JavaScript</h4>
-                <div class="progressBar">
-                    <div class="progress">
-                        <!-- 进度条 -->
+                </li>
+                <li>
+                    <h4>JavaScript</h4>
+                    <div class="progressBar">
+                        <div class="progress">
+                            <!-- 进度条 -->
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li>
-                <h4>jQuery</h4>
-                <div class="progressBar">
-                    <div class="progress">
-                        <!-- 进度条 -->
+                </li>
+                <li>
+                    <h4>jQuery</h4>
+                    <div class="progressBar">
+                        <div class="progress">
+                            <!-- 进度条 -->
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li>
-                <h4>Vue.js</h4>
-                <div class="progressBar">
-                    <div class="progress">
-                        <!-- 进度条 -->
+                </li>
+                <li>
+                    <h4>Vue.js</h4>
+                    <div class="progressBar">
+                        <div class="progress">
+                            <!-- 进度条 -->
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li>
-                <h4>React.js</h4>
-                <div class="progressBar">
-                    <div class="progress">
-                        <!-- 进度条 -->
+                </li>
+                <li>
+                    <h4>React.js</h4>
+                    <div class="progressBar">
+                        <div class="progress">
+                            <!-- 进度条 -->
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li>
-                <h4>Node.js</h4>
-                <div class="progressBar">
-                    <div class="progress">
-                        <!-- 进度条 -->
+                </li>
+                <li>
+                    <h4>Node.js</h4>
+                    <div class="progressBar">
+                        <div class="progress">
+                            <!-- 进度条 -->
+                        </div>
                     </div>
-                </div>
-            </li>
-        </ul>
+                </li>
+            </ul>
+        </div>
     </div>
     <!-- 技能结束 -->
     <!-- 作品集开始 -->
-    <div class="Portfolio">
-        <h2>作品集</h2>
-        <div class="works">
-            <ul class="clearfix">
-                <li id="work1">
-                    <!-- <h4>所有</h4> -->
-                    所有
-                </li>
-                <li id="work2">
-                    <!-- <h4>框架</h4> -->
-                    框架
-                </li>
-                <li id="work3">
-                    <!-- <h4>原生JS&amp;CSS</h4> -->
-                    原生JS&amp;CSS
-                </li>
-            </ul>
-            <div class="PortfolioBar">
-                <div id="bar" class="bar-state-1">
-                    <!-- 进度条 -->
+    <div data-x class="PortfolioWrapper" id="PortfolioMe">
+        <div class="Portfolio">
+            <h2>作品集</h2>
+            <div class="works">
+                <ul class="clearfix">
+                    <li id="work1">
+                        <!-- <h4>所有</h4> -->
+                        所有
+                    </li>
+                    <li id="work2">
+                        <!-- <h4>框架</h4> -->
+                        框架
+                    </li>
+                    <li id="work3">
+                        <!-- <h4>原生JS&amp;CSS</h4> -->
+                        原生JS&amp;CSS
+                    </li>
+                </ul>
+                <div class="PortfolioBar">
+                    <div id="bar" class="bar-state-1">
+                        <!-- 进度条 -->
+                    </div>
                 </div>
             </div>
+
+
         </div>
+        <!-- 作品集结束 -->
 
 
+        <div class="showtime">
+            <div class="big">
+                <img src="./1.jpg" alt="logo">
+            </div>
+            <div class="small-one">
+                <img src="./2.jpg" alt="logo">
+
+            </div>
+            <div class="small-two">
+                <img src="./3.jpg" alt="logo">
+
+            </div>
+        </div>
+        <!-- 作品集图片结束 -->
     </div>
-    <!-- 作品集结束 -->
-
-    <!-- 作品集响应事件 -->
-    <script>
-        work1.onclick = function () {
-            bar.className = "bar-state-1"
-        }
-        work2.onclick = function () {
-            bar.className = "bar-state-2"
-        }
-        work3.onclick = function () {
-            bar.className = "bar-state-3"
-        }
-        // work1.onclik=function(){
-
-        // }
-
-    </script>
-    <!-- 作品集响应事件 -->
-    <!-- 作品集图片开始 -->
-
-    <div class="showtime">
-        <div class="big">
-            <img src="./1.jpg" alt="logo">
-        </div>
-        <div class="small-one">
-            <img src="./2.jpg" alt="logo">
-
-        </div>
-        <div class="small-two">
-            <img src="./3.jpg" alt="logo">
-
-        </div>
-    </div>
-    <!-- 作品集图片结束 -->
 </div>
+<!-- 作品集响应事件 -->
+<script>
+    work1.onclick = function () {
+        bar.className = "bar-state-1"
+    }
+    work2.onclick = function () {
+        bar.className = "bar-state-2"
+    }
+    work3.onclick = function () {
+        bar.className = "bar-state-3"
+    }
+    // work1.onclik=function(){
 
+    // }
+
+</script>
+<!-- 作品集响应事件 -->
+<!-- 作品集图片开始 -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.3.0/Tween.min.js"></script>
+<script>
+    // loadSwitch.style.display = "none";
+    // loadSwitch.classList.add('loadOff');
+    // 添加延迟方便看到加载动画
+    // setTimeout(function () {
+    //     loadSwitch.classList.add('loadOff');
+    // }, 1000);
+    loadSwitch.classList.add('loadOff');
+    let highlight = document.querySelectorAll('[data-x]');
+    for (let i = 0; i < highlight.length; i++) {
+        highlight[i].classList.add('offset');
+    }
+
+    yyy();
+
+
+    // 滑动鼠标改变topBar的状态
+    window.onscroll = function () {
+        if (window.scrollY > 0) {
+            jNav.classList.add('sticky');
+        } else {
+            jNav.classList.remove('sticky');
+        }
+        //滑动到指定位置右边导航栏高亮
+        yyy();
+    }
+    function yyy() {
+        let highLights = document.querySelectorAll('[data-x]');
+        let highIndex = 0;
+        for (let i = 1; i < highLights.length; i++) {
+            if (Math.abs(highLights[i].offsetTop - window.scrollY) < Math.abs(highLights[highIndex].offsetTop - window.scrollY)) {
+                highIndex = i
+
+            }
+
+        }
+        highLights[highIndex].classList.remove('offset');
+        let id = highLights[highIndex].id
+        let a = document.querySelector('a[href="#' + id + '"]')
+        //找到所有li去除active状态
+        for (let i = 0; i < a.parentNode.parentNode.children.length; i++) {
+            a.parentNode.parentNode.children[i].classList.remove('highLight');
+        }
+
+        //通过a标签找到父标签li
+        a.parentNode.classList.add('highLight');
+    }
+
+    //通过鼠标滑上去获取子菜单
+    let liTags = document.getElementsByClassName('subMenuOn');//获取有子菜单的li
+    //遍历aTags,为有子菜单的a标签添加监听
+    for (let i = 0; i < liTags.length; i++) {
+        liTags[i].onmouseenter = function (x) {
+
+            let li = x.currentTarget;//找到a标签
+            // let brother = a.getElementsByClassName('subMenu')[0];
+            li.classList.add('active');
+            //因为nextSibling属性可以找到空格符或者回车，所以通过递归判断是不是标签元素 NODE.TEXT.NODE === 3 表示非标签 brother.nodeType === 3
+            // while (brother.tagName !== 'UL') {
+            //     brother = brother.nextSibling;
+
+            // }
+        }
+
+        liTags[i].onmouseleave = function (x) {
+
+            let li = x.currentTarget;//找到a标签
+            // let brother = a.getElementsByClassName('subMenu')[0];
+            li.classList.remove('active');
+        }
+
+    }
+    //引入Tween.JS库（要使用代理服务器）
+
+    //跳转到正确的位置
+    let liBar = document.querySelectorAll('.topNavbar >.nav>.navRight>ul>li>a');
+    // console.log(liBar);
+    for (let i = 0; i < liBar.length; i++) {
+        //阻止a标签的默认点击事件
+        liBar[i].onclick = function (x) {
+            x.preventDefault();
+            let a = x.currentTarget;
+            let href = a.getAttribute('href');
+            //通过href找到要跳转的相应标签
+            let tag = document.querySelector(href);
+            //调用TWEEN的函数
+            function animate(time) {
+                requestAnimationFrame(animate);
+                TWEEN.update(time);
+            }
+            requestAnimationFrame(animate);
+            //    //算出此标签原本距离视口的距离
+            //    let distance = tag.offsetTop;
+            //    window.scrollTo(0,distance-80);
+            //让动画变得过渡平滑
+            //1.获取页面跳转前到视口的距离
+            let currentDistance = window.scrollY
+            //2.获取需要跳转到的页面标签到初视口的距离
+            let distance = tag.offsetTop - 80;
+            //3.需要动画动多少次 动画整个需要多少时间
+
+            let s = distance - currentDistance//距离
+            let t = Math.abs((s / 100) * 300)//时间
+            if (t > 500) { t = 500 }
+            //开始动画
+            var coords = { y: currentDistance }; // Start at (0, 0)
+            var tween = new TWEEN.Tween(coords) // Create a new tween that modifies 'coords'.
+                .to({ y: distance }, t) // Move to (300, 200) in 1 second.
+                .easing(TWEEN.Easing.Quadratic.InOut) // Use an easing function to make the animation smooth.
+                .onUpdate(function () { // Called after tween.js updates 'coords'.
+                    // Move 'box' to the position described by 'coords' with a CSS translation.
+                    window.scrollTo(0, coords.y)
+                })
+                .start(); // Start the tween immediately.
+            // let id = setInterval(() => {
+            //     if (i === n) {
+            //         window.clearInterval(id);
+            //         return;
+            //     } else {
+            //         i = i + 1;
+
+            //     }
+
+
+            // }, (t / n));
+
+
+        }
+    }
+</script>
 </body>
 
 </html>
