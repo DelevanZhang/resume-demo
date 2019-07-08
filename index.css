@@ -12,8 +12,9 @@
     right: 100%;
     left: auto;
 }
+
 .swiper-button-next {
-    left:100%;
+    left: 100%;
     right: auto;
 }
 
@@ -549,3 +550,23 @@ div.showtime>.small-two {
     transform: translateY(0px);
     transition: all 0.9s;
 }
+
+/* 留言板开始 */
+#messageBoard {
+   
+}
+
+#messageBoard>h2 {
+    text-align: center;
+    margin: 75px 0 0;
+    color: #3C414E;
+}
+
+#messageBoard>form {
+    margin: 75px auto;
+    text-align: center;
+    width: 940px;
+  
+}
+
+/* 留言板结束 */

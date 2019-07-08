@@ -256,28 +256,38 @@
         </div>
 
     </div>
-   
+
     <!-- 这就是 view , 用户看得见的东西-->
     <!-- Slider main container -->
     <div id="mySlides">
         <div class="swiper-container">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <img src="./nav-page.jpg" class="swiper-slide">
-            <img src="./canvas.jpg" class="swiper-slide">
-            <img src="./apple-style-slides.jpg" class="swiper-slide">
-          </div>
-          <!-- If we need pagination -->
-          <div class="swiper-pagination"></div>
-  
-          <!-- If we need navigation buttons -->
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <img src="./nav-page.jpg" class="swiper-slide">
+                <img src="./canvas.jpg" class="swiper-slide">
+                <img src="./apple-style-slides.jpg" class="swiper-slide">
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
         </div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
-      </div>
+    </div>
 
-
+    <section id="messageBoard">
+        <h2>留言</h2>
+        <form id="postMessageForm">
+            <label for="">姓名</label>
+            <input type="text" id="name" name="name">
+            <label for="">内容</label>
+            <input type="text" id="content" name="content">
+            <input type="submit" value="提交">
+        </form>
+    </section>
+    
 
 
 
@@ -435,6 +445,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
 
     <script src="./swipper.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.14.0/dist/av-min.js"></script>
+    <script src="./messageBoard.js"></script>
 </body>
 
 </html>
