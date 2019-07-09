@@ -552,9 +552,7 @@ div.showtime>.small-two {
 }
 
 /* 留言板开始 */
-#messageBoard {
-   
-}
+#messageBoard {}
 
 #messageBoard>h2 {
     text-align: center;
@@ -566,7 +564,18 @@ div.showtime>.small-two {
     margin: 75px auto;
     text-align: center;
     width: 940px;
-  
+
+}
+
+#messageBoard>ol {
+    max-width: 940px;
+    margin: 0 auto;
+    border-top: 1px solid #DDD;
+}
+
+#messageBoard> ol> li {
+    padding: 16px;
+    border-bottom: 1px solid #DDD;
 }
 
 /* 留言板结束 */
